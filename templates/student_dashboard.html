@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Student Dashboard - View All Students</h3>
+<div class="alert alert-success">Welcome {{ session.username }}! You are logged in as Student.</div>
+<table class="table table-striped bg-white shadow-sm">
+<tr><th>ID</th><th>Name</th><th>Email</th><th>Course</th></tr>
+{% for s in students %}
+<tr><td>{{ s.id }}</td><td>{{ s.name }}</td><td>{{ s.email }}</td><td>{{ s.course }}</td></tr>
+{% endfor %}
+</table>
+{% endblock %}

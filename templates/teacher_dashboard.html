@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head><title>Teacher</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"></head>
+<body>
+<nav class="navbar navbar-dark bg-primary"><div class="container"><span class="navbar-brand">EduManage - Advanced</span><a href="/logout" class="btn btn-light btn-sm">Logout (teacher1)</a></div></nav>
+<div class="container mt-3">
+<h4>Teacher Dashboard - With Attendance, CGPA, Library</h4>
+<div class="row">
+<div class="col-md-4 card p-3">
+<form method="POST">
+<input name="name" class="form-control mb-2" placeholder="Student Name" required>
+<input name="email" class="form-control mb-2" placeholder="Email" required>
+<input name="course" class="form-control mb-2" placeholder="Course CSE" required>
+<input name="attendance" type="number" class="form-control mb-2" placeholder="Attendance 75" value="75" required>
+<input name="cgpa" type="number" step="0.01" class="form-control mb-2" placeholder="CGPA 8.5" required>
+<input name="library_books" type="number" class="form-control mb-2" placeholder="Library Books 0" value="0" required>
+<select name="library_due" class="form-control mb-2"><option>No Due</option><option>Due - Return Books</option><option>Fine Pending</option></select>
+<button class="btn btn-primary w-100">Add Student with 4 Features</button>
+</form>
+</div>
+<div class="col-md-8">
+<table class="table table-striped"><tr><th>ID</th><th>Name</th><th>Att</th><th>CGPA</th><th>Library</th><th>Action</th></tr>
+{% for s in students %}
+<tr><td>{{s.id}}</td><td>{{s.name}}<br><small>{{s.email}} - {{s.course}}</small></td><td>{{s.attendance}}%</td><td>{{s.cgpa}}</td><td>{{s.library_books}} Books<br>{{s.library_due}}</td><td><a href="/delete/{{s.id}}" class="btn btn-sm btn-danger">Delete</a></td></tr>
+{% endfor %}
+</table>
+</div>
+</div>
+</div>
+</body>
+</html>
