@@ -6,4 +6,3 @@ Python Flask Project with Teacher Login, Attendance, CGPA, Library features.
 
 Tech: Python, Flask, SQLite, Bootstrap
 
-Made by Swamy Chakracharyulu
